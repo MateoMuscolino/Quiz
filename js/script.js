@@ -149,3 +149,17 @@ function startQuiz() {
     nextButton.innerHTML = "Next";
     showQuestion();
 }
+
+function showQuestion() {
+    let currentQuestion = questions[currentQuestionIndex];
+    let questionNo = currentQuestionIndex + 1;
+    questionElement.innerHTML = questionNo + ". "+ currentQuestion.question;
+
+    currentQuestion.answers.forEach(answer => {
+        const button = document.createElement("button");
+        button.innerHTML = answer.text; // add the text in the button
+        button.classList.add("btn");
+        answerButton.appendChild(button);
+    });
+}
+startQuiz();
