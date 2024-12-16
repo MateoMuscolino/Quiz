@@ -137,7 +137,7 @@ const questions = [
 ];
 
 const questionElement = document.getElementById("question");
-const answerButton = document.getElementById("answer-buttons");
+const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
 
 let currentQuestionIndex = 0;
@@ -170,11 +170,10 @@ function showQuestion() {
 
 function resetState(){
     nextButton.style.display = "none";
-    while(answerButton.firstChild){
-        answerButton.removeChild(answerButton.firstChild);
+    while(answerButtons.firstChild){
+        answerButtons.removeChild(answerButtons.firstChild);
     }
 }
-
 
 function selectAnswer(e){
     const selectedBtn = e.target;
@@ -185,4 +184,5 @@ function selectAnswer(e){
         selectedBtn.classList.add("incorrect");
     }
 }
+
 startQuiz();
